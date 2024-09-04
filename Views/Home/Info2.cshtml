@@ -1,0 +1,58 @@
+﻿@model IEnumerable<EscolaMilitar.Models.Registos>
+
+@{
+    int sessionId = ViewBag.SessionId;
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Dados Pessoais</title>
+</head>
+
+<body>
+    <br />
+    <br />
+    <h4 id="h-1">Dados Pessoais:</h4>
+    <a href="@Url.Action("Info", "Home", new { tempId = sessionId })" id="db-1">Gerir listas de Inscritos</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Senha)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Senha)
+                    </td>
+                    <td>
+                        <!-- Details Link -->
+                        @Html.ActionLink("Detalhes", "Details2", new { id = item.Id, tempId = sessionId }) |
+
+                        <!-- Delete Form -->
+                        @Html.ActionLink("Apagar", "Delete2", new { id = item.Id, tempId = sessionId })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <script>
+        window.history.replaceState(null, null, window.location.pathname);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+﻿@model EscolaMilitar.Models.Militares
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Escola do Exército Português</title>
+</head>
+<body>
+    <br />
+    <main>
+        <section id="sobre">
+            <h4>Sobre a Escola do Exército Português</h4>
+            <p>A Escola do Exército Português é uma instituição de ensino superior militar que tem como objetivo formar oficiais para o Exército Português. Fundada em 1837, a escola oferece cursos de graduação e pós-graduação em diversas áreas, como ciências militares, engenharia militar, administração militar e tecnologia de informação.</p>
+        </section>
+        <section id="cursos">
+            <h4>Cursos em Vigor</h4>
+            <ul>
+                <li>Ciências Militares</li>
+                <li>Engenharia Militar</li>
+                <li>Administração Militar</li>
+                <li>Tecnologia de Informação</li>
+            </ul>
+        </section>
+        <section id="contato">
+            <h4>Contactos Disponíveis</h4>
+            <p>Para entrar em contato com a Escola do Exército Português, utilize os seguintes dados:</p>
+            <ul>
+                <li>Endereço: Rua Gomes Freire, nº 1169, 1600-288 Lisboa</li>
+                <li>Telefone: +351 21 790 8000</li>
+                <li>Email: geral@ee.pt</li>
+            </ul>
+        </section>
+    </main>
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+</body>
+</html>

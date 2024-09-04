@@ -1,0 +1,63 @@
+﻿@model EscolaMilitar.Models.Militares
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Contactos</title>
+</head>
+<body>
+    <br />
+    <br />
+    <h4>Deixe uma mensagem:</h4>
+    <hr />
+    <div class="new-container">
+        <div class="left">
+            <form action="mailto:youraddr@domain.tld" method="GET">
+                    <label>Assunto:</label>
+                    <div class="row margin-bottom-20">
+                        <div class="col-md-12 col-md-offset-0">
+                        <input class="form-control" name="subject" type="text">
+                        </div>
+                    </div>
+                    <label>Email <span class="color-red">*</span></label>
+                    <div class="row margin-bottom-20">
+                        <div class="col-md-9 col-md-offset-0">
+                            <input class="form-control" name="email" type="text">
+                        </div>
+                    </div>
+                    <label>Escolha uma data:</label>
+                    <br />
+                <span class="calendar">
+                    <input type="date" name="adate">
+                    <script>
+                        datePickerController.createDatePicker({
+                            // Associate the text input to a DD/MM/YYYY date format
+                            formElements: {
+                                "adate": "%d/%m/%Y"
+                            }
+                        });
+                        </script>
+                </span>
+                <br />
+                    <textarea name="body" placeholder="Mensagem"></textarea>
+                    <br />
+                <input type="submit" value="Enviar" class="btn btn-primary" onclick="location.href='mailto:em@i.l';" />
+            </form>
+        </div>
+    <div class="right">
+        <div class="gmap_canvas">
+            <iframe width="600" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=portugal&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <a href="https://2yu.co">2yu</a><br>
+            <a href="https://embedgooglemap.2yu.co">html embed google map</a>
+        </div>
+    </div>
+    </div>
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+</body>
+</html>

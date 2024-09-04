@@ -1,0 +1,41 @@
+﻿@model EscolaMilitar.Models.Militares
+@{
+    ViewData["Title"] = "Home";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"] - Escola do Exército Português</title>
+</head>
+<body>
+    <br />
+    <header>
+        <h4>História do Exército Português</h4>
+    </header>
+    <hr />
+    <main>
+        <section>
+            <h4>Origens</h4>
+            <p>O Exército Português teve suas origens no século XII, com a criação da primeira milícia organizada, chamada de "Ordem dos Cavaleiros de Santiago da Espada". Ao longo dos séculos, o exército português evoluiu e se modernizou, sendo utilizado em diversas campanhas militares, tanto dentro quanto fora de Portugal.</p>
+        </section>
+        <section>
+            <h4>Idade Moderna</h4>
+            <p>No século XV, durante a época dos descobrimentos, o Exército Português foi fundamental para a expansão do império português, tendo participado de diversas expedições e batalhas em territórios como a África, a Índia e o Brasil.</p>
+            <p>Na segunda metade do século XVIII, o exército português passou por uma profunda reforma, com a criação de novas unidades militares e a modernização das armas e táticas de combate.</p>
+        </section>
+        <section>
+            <h4>Idade Contemporânea</h4>
+            <p>No século XIX, o Exército Português teve um papel importante nas guerras civis e nas lutas pela independência das colônias portuguesas na África.</p>
+            <p>No século XX, o exército português foi modernizado novamente, com a incorporação de novas tecnologias e equipamentos. O exército português participou de diversas missões de paz e de guerra, como a Guerra do Ultramar (1961-1974), a Guerra do Golfo (1990-1991) e as operações de paz da ONU e da NATO.</p>
+        </section>
+    </main>
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+</body>
+</html>

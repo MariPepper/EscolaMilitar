@@ -1,0 +1,77 @@
+﻿@model IEnumerable<EscolaMilitar.Models.Militares>
+
+@{
+    int sessionId = ViewBag.SessionId ?? 0; // Default to 0 or another valid value if null
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Listas</title>
+</head>
+<body>
+    <br />
+    <br />
+    <h4 id="h-2">Lista de inscritos:</h4>
+    <a href="@Url.Action("Info2", "Home", new { tempId = sessionId })" id="db-2">Gerir contas de Utilizador</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Mec</th>
+                <th>Nome</th>
+                <th>Apelido</th>
+                <th>Idade</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mec)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Apelido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Idade)
+                    </td>
+                    <td>
+                        <!-- Download Form -->
+                        <form asp-action="DownloadData" method="get" style="display:inline;">
+                            <input type="hidden" name="id" value="@item.Id" />
+                            <input type="hidden" name="tempId" value="@sessionId" />
+                            <input type="submit" value="Download" class="btn-link" /> |
+                        </form>
+                        <!-- Edit Form -->
+                        <form asp-action="Edit" method="get" style="display:inline;">
+                            <input type="hidden" name="id" value="@item.Id" />
+                            <input type="hidden" name="tempId" value="@sessionId" />
+                            <input type="submit" value="Editar" class="btn-link" />
+                        </form>
+
+                        <!-- Details Link -->
+                        | @Html.ActionLink("Detalhes", "Details", new { id = item.Id, tempId = sessionId }) |
+
+                        <!-- Delete Form -->
+                        @Html.ActionLink("Apagar", "Delete", new { id = item.Id, tempId = sessionId })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <script>
+        window.history.replaceState(null, null, window.location.pathname);
+    </script>
+</body>
+</html>
+
+
+

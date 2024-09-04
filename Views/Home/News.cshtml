@@ -1,0 +1,30 @@
+﻿@model EscolaMilitar.Models.Militares
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Notícias</title>
+</head>
+<body>
+    <br />
+    <br />
+    <hr />
+    <div class="new-container">
+        <div class="left">
+            <p>
+                Numa bela manhã ensolarada, a tropa do exército português partiu em uma aventura épica pelos territórios desconhecidos. Equipados com coragem e determinação, os soldados enfrentaram densas florestas, montanhas íngremes e rios revoltosos. Sob a liderança do destemido capitão, superaram desafios, estabeleceram acampamentos estratégicos e fortaleceram os laços de camaradagem. Ao longo da jornada, encontraram povos exóticos e trocaram experiências culturais, deixando um legado de respeito e colaboração. Com sua missão cumprida, o exército português retornou à pátria com orgulho, levando consigo a memória dessa inesquecível e enriquecedora aventura.
+            </p>
+        </div>
+    <div class="right">
+        <img id="myImage" src="~/img/imagem1.jpg" onclick="changeImage()" alt="Image">
+    </div>
+    </div>
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+</body>
+</html>
